@@ -33,7 +33,7 @@ export default function ProductList() {
   }
 
   function formatPrice(p) {
-    if (p === null || p==- undefined) return "N/A";
+    if (p === null || p=== undefined) return "N/A";
     // BUG: broken formatting that can produce NaN if p undefined
     return `₹${Number(p).toFixed(2)}`;
   }
