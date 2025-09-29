@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     //case insensitive search
     let filtered = products.filter(p => {
       if (category && p.category !== category) return false;
-      return p.name.includes.toLowerCase().includes(search.toLowerCase());
+      return p.name.toLowerCase().includes(search.toLowerCase());
     });
 
     // BUG: pagination off-by-one: current code returns one less item
