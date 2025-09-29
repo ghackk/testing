@@ -14,25 +14,28 @@ export default function ProductList() {
   async function fetchData() {
     try {
       // BUG: wrong URL path (typo)
-      const res = await fetch(`http://localhost:5000/ap/products?search=${search}&page=${page}&pageSize=${pageSize}`);
+      const res = await fetch(`http://localhost:5000/api/products?search=${search}&page=${page}&pageSize=${pageSize}`);
       const data = await res.json();
       // BUG: code expects data.items but API returns items in a different shape when error
-      if (data.error) {
+      if (res.status === 404) {
         setItems([]);
         setTotal(0);
         return;
       }
       // BUG: wrong key mapping: uses productId instead of id
-      setItems(data.items.map(i => ({ id: i.productId, name: i.name, price: i.price })));
+      setItems(data.items.map(i => ({ id: i.id, name: i.name, price: i.price })));
       setTotal(data.total);
     } catch (err) {
       console.error("fetch error", err);
+      setItems([]);
+      setTotal(0);
     }
   }
 
   function formatPrice(p) {
+    if (p === null || p==- undefined) return "N/A";
     // BUG: broken formatting that can produce NaN if p undefined
-    return `₹${(p).toFixed(2)}`;
+    return `₹${Number(p).toFixed(2)}`;
   }
 
   return (
