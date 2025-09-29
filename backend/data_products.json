@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Cotton Rug",
+    "category": "home",
+    "price": 1299,
+    "verified": true
+  },
+  {
+    "id": 2,
+    "name": "Ceramic Lamp",
+    "category": "home",
+    "price": 899,
+    "verified": false
+  },
+  {
+    "id": 3,
+    "name": "Silk Kurta",
+    "category": "ethnic",
+    "price": 1999,
+    "verified": true
+  },
+  {
+    "id": 4,
+    "name": "Wooden Frame",
+    "category": "home",
+    "price": 499,
+    "verified": true
+  },
+  {
+    "id": 5,
+    "name": "Handmade Vase",
+    "category": "home",
+    "price": 799,
+    "verified": false
+  },
+  {
+    "id": 6,
+    "name": "Embroidered Saree",
+    "category": "ethnic",
+    "price": 4999,
+    "verified": true
+  },
+  {
+    "id": 7,
+    "name": "Table Runner",
+    "category": "home",
+    "price": 299,
+    "verified": true
+  },
+  {
+    "id": 8,
+    "name": "Candle Set",
+    "category": "home",
+    "price": 199,
+    "verified": false
+  }
+]
